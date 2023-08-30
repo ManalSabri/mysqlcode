@@ -1,0 +1,6 @@
+SELECT 
+    DATE_FORMAT(`Date`, '%Y-%m') AS YearMonth, 
+    COUNT(*) AS RecordCount
+FROM your_table_name 
+GROUP BY DATE_FORMAT(`Date`, '%Y-%m')
+ORDER BY YearMonth DESC;
