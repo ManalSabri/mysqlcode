@@ -1,0 +1,10 @@
+SELECT 
+    AVG(DATEDIFF(event_closed_date, event_create_date)) as mean_resolution_time,
+    MAX(DATEDIFF(event_closed_date, event_create_date)) as max_resolution_time,
+    MIN(DATEDIFF(event_closed_date, event_create_date)) as min_resolution_time
+FROM 
+    your_table_name
+WHERE 
+    event_closed_date IS NOT NULL 
+    AND event_create_date IS NOT NULL;
+
