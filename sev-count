@@ -1,0 +1,9 @@
+SELECT 
+    control_name,
+    COUNT(CASE WHEN severity = 'critical' THEN 1 END) AS Count_Critical,
+    COUNT(CASE WHEN severity = 'high' THEN 1 END) AS Count_High,
+    COUNT(CASE WHEN severity = 'medium' THEN 1 END) AS Count_Medium
+FROM 
+    your_table_name
+GROUP BY 
+    control_name;
